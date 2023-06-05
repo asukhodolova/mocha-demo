@@ -1,0 +1,17 @@
+{
+  "name": "mocha-demo",
+  "version": "1.0.0",
+  "description": "Mocha Sample Tests",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zebrunner/javascript-agent-mocha": "^0.0.2",
+    "axios": "^1.4.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "pino": "^8.14.1"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "reporter": "@zebrunner/javascript-agent-mocha",
+  "reporterConfig": {
+    "enabled": true,
+    "projectKey": "ANNAS",
+    "server": {
+      "hostname": "https://sanna.zebrunner.dev/",
+      "accessToken": "JHq10kuJrPAjeZjvyXSNVTqWx2hpGjO2jVGGDqfhRitTslmn4P"
+    },
+    "launch": {
+      "displayName": "Mocha launch",
+      "build": "alpha-1",
+      "environment": "LOCAL",
+      "locale": "en_US",
+      "treatSkipsAsFailures": true,
+      "labels": {
+        "runner": "Alice",
+        "reviewer": "Bob"
+      },
+      "artifactReferences": {
+        "landing": "https://zebrunner.com"
+      }
+    },
+    "milestone": {
+      "id": 1,
+      "name": "May milestone"
+    },
+    "notifications": {
+      "notifyOnEachFailure": false,
+      "slackChannels": "dev, qa",
+      "teamsChannels": "dev-channel, management"
+    }
+  },
+  "spec": "test/**/*.js",
+  "require": "test/rootHooks.js",
+  "parallel": true,
+  "timeout": 10000
+}
