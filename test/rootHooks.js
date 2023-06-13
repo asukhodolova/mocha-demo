@@ -1,20 +1,17 @@
+const logger = require('./logger');
+const { CurrentTest } = require("@zebrunner/javascript-agent-mocha");
+
 exports.mochaHooks = () => ({
-    beforeAll() {
-      console.log('root beforeAll');
+  beforeEach: [
+    function beforeEachRoot() {
+      CurrentTest.initLogging(this.currentTest);
+      logger.info('EVENT_TEST_BEGIN');
+      logger.info('some logs');
     },
-    afterAll(done) {
-      console.log('root afterAll');
-      done();
+  ],
+  afterEach: [
+    function afterEachRoot() {
+      logger.info('EVENT_TEST_END');
     },
-    beforeEach: [
-      function beforeEachRootHookNoReporting() {
-        console.log('root beforeEach');
-      },
-    ],
-    afterEach: [
-      function afterEachRoot() {
-        console.log('root afterEach');
-      },
-    ],
-  });
-  
+  ],
+});

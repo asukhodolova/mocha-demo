@@ -1,4 +1,4 @@
-const logger = require('pino')();
+const logger = require('./logger');
 const assertChai = require('chai').assert;
 const { expect } = require('chai');
 // eslint-disable-next-line no-unused-vars
@@ -6,15 +6,19 @@ const should = require('chai').should();
 const { CurrentLaunch } = require("@zebrunner/javascript-agent-mocha");
 
 describe('Chai assertions', () => {
-  before(() => {
-    CurrentLaunch.attachLabel('chai', 'assertions');
-    CurrentLaunch.attachArtifactReference('github', 'https://github.com/zebrunner');
-    CurrentLaunch.uploadArtifactFromFile('sample', 'basic.js');
-  });
+  // before(() => {
+  //   CurrentLaunch.attachLabel('chai', 'assertions');
+  //   CurrentLaunch.attachArtifactReference('github', 'https://github.com/zebrunner');
+  //   CurrentLaunch.uploadArtifactFromFile('sample', 'basic.js');
+  // });
 
   describe('that fail', () => {
     it('assert style', () => {
-      logger.info('fail: hello world');
+      logger.warn('this is warn');
+      logger.error('this is error');
+      logger.fatal('this is fatal');
+      logger.debug('this is debug');
+      logger.info('this is info');
 
       const child = logger.child({ a: 'property' });
       child.info('fail: hello child!');

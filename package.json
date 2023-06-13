@@ -8,10 +8,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zebrunner/javascript-agent-mocha": "^0.0.2",
+    "@zebrunner/javascript-agent-mocha": "^0.0.8",
     "axios": "^1.4.0",
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
-    "pino": "^8.14.1"
+    "pino": "^8.14.1",
+    "pino-pretty": "^10.0.0"
   }
 }
