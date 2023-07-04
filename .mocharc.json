@@ -31,8 +31,9 @@
       "teamsChannels": "dev-channel, management"
     }
   },
-  "spec": "test/**/fast.js",
+  "spec": "test/**/*.js",
   "require": "test/rootHooks.js",
   "parallel": false,
-  "timeout": 5000
+  "timeout": 5000,
+  "exit": false
 }
