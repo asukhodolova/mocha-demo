@@ -33,7 +33,7 @@
   },
   "spec": "test/**/*.js",
   "require": "test/rootHooks.js",
-  "parallel": false,
+  "parallel": true,
   "timeout": 5000,
-  "exit": false
+  "exit": true
 }

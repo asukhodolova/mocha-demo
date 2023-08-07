@@ -18,12 +18,4 @@ const transport = pino.transport({
   ],
 });
 
-module.exports = pino({
-  formatters: {
-    bindings(bindings) {
-      return { time_formatted: '2023-06-07T11:05:18.548Z' };
-    },
-  },
-  timestamp: false,
-  messageKey: 'message',
-}, transport);
+module.exports = pino(transport);
