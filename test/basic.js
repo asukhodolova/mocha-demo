@@ -32,7 +32,7 @@ describe('Example Test Top Describe', () => {
     assert.equal(1, 1);
   });
 
-  it('Example Test Failing Te(st @fail', function () {
+  it('Example Test Failing Test @fail', function () {
     CurrentTest.attachLabel(this.test, 'fail', 'fail1', 'fail2', '', null, 'fail3');
     CurrentTest.attachArtifactReference(
       this.test,

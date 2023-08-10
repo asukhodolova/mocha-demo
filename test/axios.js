@@ -20,23 +20,23 @@ describe('Axios API Request Tests', async () => {
   });
 
   it('should be able get user list', async () => {
-    logger.info('GET: info');
-    logger.info('GET: info2');
-    logger.info('GET: info3');
+    logger.info('AXIOS GET: info');
+    logger.info('AXIOS GET: info2');
+    logger.info('AXIOS GET: info3');
 
     const res = await axios.get('https://reqres.in/api/users?page=2');
     expect(res.data.page).equal(2);
     expect(res.data.per_page).equal(6);
 
-    logger.warn('GET: warn4');
-    logger.error('GET: error5');
-    logger.fatal('GET: fatal6');
+    logger.warn('AXIOS GET: warn4');
+    logger.error('AXIOS GET: error5');
+    logger.fatal('AXIOS GET: fatal6');
   });
 
   it('should be able post a user', async () => {
-    logger.info('POST: info');
-    logger.info('POST: info2');
-    logger.info('POST: info3');
+    logger.info('AXIOS POST: info');
+    logger.info('AXIOS POST: info2');
+    logger.info('AXIOS POST: info3');
 
     const randomName = 'testName';
     const randomJobTitle = 'testJobTitle';
@@ -49,8 +49,8 @@ describe('Axios API Request Tests', async () => {
     expect(res.name).equal(randomName);
     expect(res.job).equal(randomJobTitle);
 
-    logger.warn('POST: warn4');
-    logger.error('POST: error5');
-    logger.fatal('POST: fatal6');
+    logger.warn('AXIOS POST: warn4');
+    logger.error('AXIOS POST: error5');
+    logger.fatal('AXIOS POST: fatal6');
   });
 });

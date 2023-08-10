@@ -3,7 +3,7 @@ const assertChai = require('chai').assert;
 const { expect } = require('chai');
 // eslint-disable-next-line no-unused-vars
 const should = require('chai').should();
-const { CurrentLaunch } = require("@zebrunner/javascript-agent-mocha");
+const { CurrentLaunch, CurrentTest } = require("@zebrunner/javascript-agent-mocha");
 
 describe('Chai assertions', () => {
   // before(() => {
@@ -14,11 +14,11 @@ describe('Chai assertions', () => {
 
   describe('that fail', () => {
     it('assert style', () => {
-      logger.warn('this is warn');
-      logger.error('this is error');
-      logger.fatal('this is fatal');
-      logger.debug('this is debug');
-      logger.info('this is info');
+      logger.warn('ASSERT this is warn');
+      logger.error('ASSERT this is error');
+      logger.fatal('ASSERT this is fatal');
+      logger.debug('ASSERT this is debug');
+      logger.info('ASSERT this is info');
 
       const child = logger.child({ a: 'property' });
       child.info('fail: hello child!');
@@ -44,10 +44,10 @@ describe('Chai assertions', () => {
 
   describe('that pass', () => {
     it('assert style', () => {
-      logger.info('pass: hello world');
+      logger.info('ASSERT pass: hello world');
 
       const child = logger.child({ a: 'property' });
-      child.info('pass: hello child!');
+      child.info('ASSERT pass: hello child!');
 
       const numbers = [1, 2, 3, 4, 5];
       assertChai.isArray(numbers, 'is array of numbers');
